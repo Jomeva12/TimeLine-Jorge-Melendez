@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrincipal"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/buscarEditText"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:background="@drawable/esquinas_redondeadas"
+                android:drawablePadding="16dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:hint="Buscar imágenes"
+                android:fontFamily="@font/urbanist_regular"
+                android:minHeight="40dp"
+                android:padding="3dp"
+                android:textColor="@color/GrayTextInput"
+                android:textColorHint="@color/GrayTextInput"
+                android:textSize="22dp"
+                android:layout_marginBottom="8dp"
+                android:inputType="text|textNoSuggestions" />
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="105dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="205dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reciclerFotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+
+    </FrameLayout>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/cargando"
+        android:layout_width="300dp"
+        android:layout_height="205dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="cargando.json"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_loop="true" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
